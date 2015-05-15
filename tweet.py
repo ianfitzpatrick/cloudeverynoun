@@ -19,4 +19,4 @@ with open(filename, 'r') as fin:
 with open(filename, 'w') as fout:
     fout.writelines(data[1:])
 
-api.update_status(status=tweet_text)
+api.update_status(status=tweet_text.title())
