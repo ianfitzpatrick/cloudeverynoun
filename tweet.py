@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import tweepy, time, sys
+import tweepy, time, os, sys, yaml
 
 # Load twitter credentials for this bot from config file
 BOTCRED_FILE = '%s/.twurlrc' % os.path.expanduser('~') 
