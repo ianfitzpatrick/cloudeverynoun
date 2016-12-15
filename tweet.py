@@ -2,6 +2,7 @@
 
 import tweepy, time, os, sys, yaml
 
+PROJDIR = sys.path[0]
 # Load twitter credentials for this bot from config file
 BOTCRED_FILE = '%s/.twurlrc' % os.path.expanduser('~') 
 with open(BOTCRED_FILE, 'r') as credfile:
@@ -18,7 +19,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
 
-filename = '/home/ianfitzpat/webapps/ianfitzpatrick_com/cloud_every_noun/nouns_to_tweet.txt'
+filename = '%s/nouns_to_tweet.txt' % PROJDIR
 with open(filename, 'r') as fin:
     data = fin.read().splitlines(True)
     tweet_text = 'cloud ' + data[0]
